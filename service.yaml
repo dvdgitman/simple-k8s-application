@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-k8s-application
+  labels:
+    app: simple-k8s-application
+spec:
+  selector:
+    app: simple-k8s-application
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP

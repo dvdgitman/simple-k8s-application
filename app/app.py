@@ -14,3 +14,8 @@ def home():
         'hostname': socket.gethostname(),
         'version': '1.0.0'
     })
+
+@app.route('/health')
+def health():
+    """Health check"""
+    return jsonify({'status': 'ok'}), 200
